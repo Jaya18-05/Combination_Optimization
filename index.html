@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Optimization Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Combinatorial Optimization Dashboard</h1>
+    <form action="/run" method="POST">
+      <select name="problem">
+        <option value="knapsack">Knapsack Problem</option>
+        <option value="tsp">Travelling Salesman (TSP)</option>
+        <option value="dp_table">Dynamic Programming Table</option>
+      </select><br><br>
+      <button type="submit">Run Optimization</button>
+    </form>
+  </div>
+</body>
+</html>

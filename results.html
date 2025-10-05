@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Algorithm Results</h1>
+  <table style="margin:auto; width:70%; background:white; border-collapse:collapse; border-radius:10px;">
+    <tr style="background:#007bff; color:white;">
+      <th>Algorithm</th>
+      <th>Result</th>
+    </tr>
+    {% for k,v in results.items() %}
+      <tr><td>{{k}}</td><td>{{v}}</td></tr>
+    {% endfor %}
+  </table>
+  {% if chart %}
+    <img src="{{ chart }}" alt="Comparison Chart" width="60%">
+  {% endif %}
+  {% if graph %}
+    <img src="{{ graph }}" alt="Graph Visualization" width="70%">
+  {% endif %}
+  <br><br>
+  <a href="/" style="text-decoration:none;"><button>Run Again</button></a>
+</body>
+</html>
